@@ -10,7 +10,7 @@ function NavBar() {
   const {postid}=useParams()
  
 useEffect(()=>{
-fetch(`/${postid}`).then(res=> res.json()).then(data=>{
+fetch(`https://newbackendswop.herokuapp.com/${postid}`).then(res=> res.json()).then(data=>{
   if(data.error){
     console.log('nth')
 

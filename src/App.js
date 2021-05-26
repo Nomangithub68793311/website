@@ -10,10 +10,10 @@ function App() {
   return (
     <BrowserRouter>
     
-    <Route exact path= 'https://newbackendswop.herokuapp.com/:postid'>
+    <Route exact path= '/:postid'>
     <NavBar/>
     </Route>
-    <Route exact path= 'https://newbackendswop.herokuapp.com/home'>
+    <Route exact path= '/home'>
     <Home/>
     </Route>
     </BrowserRouter>
