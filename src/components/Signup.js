@@ -20,7 +20,7 @@ fetch(`https://newbackendswop.herokuapp.com/${postid}`).then(res=> res.json()).t
     
     data.user.accountlinks.map((item)=>{
    return(
-     console.log(item.title)
+     console.log("ids are",item._id)
    )
     })
     setPic(data.user.pic);setUsername(data.user.accountuser);
