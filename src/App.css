@@ -127,7 +127,14 @@ img{
 }
 .social{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width:30%
+  
+  flex-direction: row;
+  
+
+}
+.btnname{
+  font-family: 'Itim', cursive;
+}
+.fontfam{
+  font-family: 'Itim', cursive; 
 }

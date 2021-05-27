@@ -39,6 +39,9 @@ const haddleClicked=(event)=>{
   window.open('https://www.facebook.com/rana.buddy/','')
 
 }
+const clickedsocial=(url,usernam)=>{
+  window.open(`${url}${usernam}`,'')
+}
 const clicked=()=>{
   alert("Please Download Swop")
 }
@@ -82,36 +85,36 @@ const clicked=()=>{
       <button onClick={clicked} className="  btn">Direct On</button >
       <button onClick={clicked} className="  btn">Edit Profile</button >
       </div>
-      <div className='image '>
+      <div className='image fontfam '>
         <p>Your Swop opens directly to your first link</p>
       </div>
-      <div className='social'>
+      <div className='image '>
         {links?
         links.map((item)=>{
           return(
-            
-           <h5>
+            <div className='social'>
+           <button className='btnname' autoCapitalize='true' style={{color:item.color,height:50,width:200,padding:10,margin:5,fontSize:20}} onClick={()=>clickedsocial(item.url,item.usernam)}>
              
-             {item.usernam}
-            
+             {item.title}
+             </button>
              
-           </h5>
+             </div>
            
            
           )
         })
         :null}
       </div>
-      <div className='image'>
+      {/* <div className='image'>
         <FaFacebook size="6em" color="blue" onClick={haddleClicked}/>
-      </div>
+      </div> */}
       <div className='image'>
         <h3>Swop me</h3>
       </div>
       <div className='image'>
         <h3>Patent Pending</h3>
       </div>
-      <div className='image'>
+      <div className='image .fontfam'>
         <p>Support Center</p>
       </div>
       
