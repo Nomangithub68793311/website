@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React,{useState} from 'react'
-import {Route,BrowserRouter} from 'react-router-dom'
+import {Route,BrowserRouter,Switch} from 'react-router-dom'
 import NavBar from './components/Signup'
 import Home from './components/screens/Home'
 
@@ -9,13 +9,11 @@ function App() {
  
   return (
     <BrowserRouter>
-    
-    <Route exact path= '/:postid'>
-    <NavBar/>
-    </Route>
-    <Route exact path= '/home'>
-    <Home/>
-    </Route>
+    <Switch>
+    <Route exact strict path= '/:postid' component={NavBar}/>
+    <Route exact strict path= '/home' component={Home}/>
+    </Switch>
+   
     </BrowserRouter>
   
   // <> 

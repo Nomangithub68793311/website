@@ -1,13 +1,14 @@
 import React ,{useEffect,useState}from 'react'
 import { Fragment } from 'react'
-import  {link,useParams} from 'react-router-dom'
-
+import  {link,useParams,useHistory} from 'react-router-dom'
+import { FaFacebook } from 'react-icons/fa';
 
 function NavBar() {
   const [pic,setPic]=useState('')
   const [username,setUsername]=useState('')
   const [links,setLinks]=useState([])
   const {postid}=useParams()
+  const history =useHistory()
  
 useEffect(()=>{
 fetch(`https://newbackendswop.herokuapp.com/${postid}`).then(res=> res.json()).then(data=>{
@@ -31,7 +32,12 @@ fetch(`https://newbackendswop.herokuapp.com/${postid}`).then(res=> res.json()).t
   console.log('error no')
 })
 },[])
-    return (
+const haddleClicked=(event)=>{
+  event.preventDefault();
+  
+
+}
+   return (
         <>
         <nav style={{position:'fixed', zIndex: '3'}}>
     <div className="nav-wrapper black" >
@@ -87,6 +93,9 @@ fetch(`https://newbackendswop.herokuapp.com/${postid}`).then(res=> res.json()).t
           )
         })
         :null}
+      </div>
+      <div className='image'>
+        <FaFacebook size="6em" color="blue" onClick={haddleClicked}/>
       </div>
       <div className='image'>
         <h3>Swop me</h3>
