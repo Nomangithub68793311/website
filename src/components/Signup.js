@@ -36,7 +36,7 @@ fetch(`https://newbackendswop.herokuapp.com/${postid}`).then(res=> res.json()).t
 },[])
 const haddleClicked=(event)=>{
   event.preventDefault();
-  window.open('https://www.google.com','')
+  window.open('https://www.facebook.com/rana.buddy/','')
 
 }
    return (
