@@ -20,10 +20,10 @@ fetch(`https://newbackendswop.herokuapp.com/${postid}`).then(res=> res.json()).t
     console.log('something',data.user.accountlinks)
     setPic(data.user.pic);setUsername(data.user.accountuser);
     data.user.accountlinks? 
-    setLinks(data.user.accountlinks)
-    // setLinks((pre)=>{
-    //     return[...pre,...data.user.accountlinks]
-    // })
+    // setLinks(data.user.accountlinks)
+    setLinks((pre)=>{
+        return[...pre,...data.user.accountlinks]
+    })
     :setLinks([])
     console.log('arry',links)
    
