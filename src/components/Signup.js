@@ -18,6 +18,7 @@ fetch(`https://newbackendswop.herokuapp.com/${postid}`).then(res=> res.json()).t
   }else{
     console.log('something',data.user)
     console.log('something',data.user.accountlinks)
+    console.log('something',data.user.accountlinks)
     setPic(data.user.pic);setUsername(data.user.accountuser);
     data.user.accountlinks? 
     // setLinks(data.user.accountlinks)
@@ -86,7 +87,7 @@ const haddleClicked=(event)=>{
         links.map((item)=>{
           return(
             
-           <h5 >
+           <h5>
              {item.title}
            </h5>
            
