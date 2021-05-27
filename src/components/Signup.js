@@ -39,6 +39,9 @@ const haddleClicked=(event)=>{
   window.open('https://www.facebook.com/rana.buddy/','')
 
 }
+const clicked=()=>{
+  alert("Please Download Swop")
+}
    return (
         <>
         <nav style={{position:'fixed', zIndex: '3'}}>
@@ -76,8 +79,8 @@ const haddleClicked=(event)=>{
         <p>swopapp.me/{username}</p>
       </div>
       <div className='image'>
-      <a className="  btn">Direct On</a>
-      <a className="  btn">Edit Profile</a>
+      <button onClick={clicked} className="  btn">Direct On</button >
+      <button onClick={clicked} className="  btn">Edit Profile</button >
       </div>
       <div className='image '>
         <p>Your Swop opens directly to your first link</p>
@@ -86,16 +89,14 @@ const haddleClicked=(event)=>{
         {links?
         links.map((item)=>{
           return(
-            <div className='image '>
+            
            <h5>
-             {item.title}
+             
              {item.usernam}
-             {item.nameIcon}
-             {item.color}
-             {item.url}
+            
              
            </h5>
-           </div>
+           
            
           )
         })
