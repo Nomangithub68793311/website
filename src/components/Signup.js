@@ -70,15 +70,15 @@ const clicked=()=>{
       <div className="card "style={{backgroundColor:'white'}} >
         <div className='image' style={{marginTop:'65px'}}>
           {
-            (pic)?<img src={pic} alt='pic'/>:
+            (pic)?<img src={pic} style={{borderRadius:20,marginTop:50}} alt='pic'/>:
             <img src='/images/propic.png'  alt='pic'/>
           }
       
       </div>
       <div className='image'>
-        <h3>Username </h3>
+        <h3>username </h3>
       </div>
-      <div className='image fontfamily'>
+      <div className='image fontfam'>
         <p>swopapp.me/{username}</p>
       </div>
       <div className='image'>
@@ -93,7 +93,7 @@ const clicked=()=>{
         links.map((item)=>{
           return(
             <div className='social'>
-           <button className='btnname' autoCapitalize='true' style={{color:item.color,height:50,width:200,padding:10,margin:5,fontSize:20}} onClick={()=>clickedsocial(item.url,item.usernam)}>
+           <button className='btnname' autoCapitalize='true' style={{color:item.color,height:50,width:200,padding:10,margin:5,fontSize:20,borderColor:'white',borderRadius:10}} onClick={()=>clickedsocial(item.url,item.usernam)}>
              
              {item.title}
              </button>
@@ -114,7 +114,7 @@ const clicked=()=>{
       <div className='image'>
         <h3>Patent Pending</h3>
       </div>
-      <div className='image .fontfam'>
+      <div className='image fontfamily'>
         <p>Support Center</p>
       </div>
       
