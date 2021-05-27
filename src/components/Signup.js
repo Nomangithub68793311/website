@@ -70,7 +70,7 @@ const clicked=()=>{
       <div className="card "style={{backgroundColor:'white'}} >
         <div className='image' style={{marginTop:'65px'}}>
           {
-            (pic)?<img src={pic} style={{borderRadius:20,marginTop:50}} alt='pic'/>:
+            (pic)?<img src={pic}  alt='pic'/>:
             <img src='/images/propic.png'  alt='pic'/>
           }
       
@@ -86,7 +86,7 @@ const clicked=()=>{
       <button onClick={clicked} className="  btn">Edit Profile</button >
       </div>
       <div className='image fontfam '>
-        <p>Your Swop opens directly to your first link</p>
+        <p>Swop Opens To Your First Link</p>
       </div>
       <div className='image '>
         {links?
