@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
     <Switch>
     <Route exact strict path= '/:postid' component={NavBar}/>
-    <Route exact strict path= '/home' component={Home}/>
+    <Route exact strict path= '/' component={Home}/>
     </Switch>
    
     </BrowserRouter>
