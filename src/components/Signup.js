@@ -2,7 +2,9 @@ import React ,{useEffect,useState}from 'react'
 import { Fragment } from 'react'
 import  {link,useParams,useHistory} from 'react-router-dom'
 import { FaFacebook } from 'react-icons/fa';
-
+const small = '300.jpg';
+const medium = '768.jpg';
+const large = '1280.jpg';
 function NavBar() {
   const [pic,setPic]=useState('')
   const [username,setUsername]=useState('')
@@ -70,7 +72,7 @@ const clicked=()=>{
       <div className="card "style={{backgroundColor:'white'}} >
         <div className='image' style={{marginTop:'65px'}}>
           {
-            (pic)?<img src={pic}  alt='pic'/>:
+            (pic)?<img src={pic} srcSet={`${small} 300w, ${medium} 768w, ${large} 1280w`} alt='pic'/>:
             <img src='/images/propic.png'  alt='pic'/>
           }
       
