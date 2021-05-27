@@ -86,11 +86,16 @@ const haddleClicked=(event)=>{
         {links?
         links.map((item)=>{
           return(
-            
+            <div className='image '>
            <h5>
              {item.title}
+             {item.usernam}
+             {item.nameIcon}
+             {item.color}
+             {item.url}
+             
            </h5>
-           
+           </div>
            
           )
         })
