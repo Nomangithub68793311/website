@@ -18,11 +18,7 @@ fetch(`https://newbackendswop.herokuapp.com/${postid}`).then(res=> res.json()).t
   }else{
     console.log('something',data.user)
     
-    data.user.accountlinks.map((item)=>{
-   return(
-     console.log("ids are",item._id)
-   )
-    })
+    data.user.accountlinks.map(item=>console.log("ids are",item._id))
     setPic(data.user.pic);setUsername(data.user.accountuser);
     data.user.accountlinks? 
     // setLinks(data.user.accountlinks)
