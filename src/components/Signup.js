@@ -82,8 +82,8 @@ const clicked=()=>{
         <p>swopapp.me/{username}</p>
       </div>
       <div className='image'>
-      <button onClick={clicked} className="  btn">Direct On</button >
-      <button onClick={clicked} className="  btn">Edit Profile</button >
+      <button onClick={clicked} className="text-capitalize btn">Direct On</button >
+      <button onClick={clicked} className="text-capitalize btn">Edit Profile</button >
       </div>
       <div className='image fontfam '>
         <p>Swop Opens To Your First Link</p>
@@ -93,7 +93,7 @@ const clicked=()=>{
         links.map((item)=>{
           return(
             <div className='social'>
-           <button className='btnname' autoCapitalize='true' style={{color:item.color,height:50,width:200,padding:10,margin:5,fontSize:20,borderColor:'white',borderRadius:10}} onClick={()=>clickedsocial(item.url,item.usernam)}>
+           <button className='btnname' className="text-capitalize" style={{color:item.color,height:50,width:200,padding:10,margin:5,fontSize:20,borderColor:'white',borderRadius:10}} onClick={()=>clickedsocial(item.url,item.usernam)}>
              
              {item.title}
              </button>
