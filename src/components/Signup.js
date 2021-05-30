@@ -82,20 +82,23 @@ const clicked=()=>{
         <p>swopapp.me/{username}</p>
       </div>
       <div className='image'>
-      <button onClick={clicked} className="text-capitalize btn">Direct On</button >
-      <button onClick={clicked} className="text-capitalize btn">Edit Profile</button >
+      <button onClick={clicked} className="text-capitalize btn btn-secondary">Direct On</button >
+      <button onClick={clicked} className="text-capitalize btn btn-secondary">Edit Profile</button >
       </div>
       <div className='image fontfam '>
         <p>Swop Opens To Your First Link</p>
       </div>
+      {/* <div className='image fontfam '>
+        <i className="fa fa-linkedin "></i>
+      </div> */}
       <div className='image '>
         {links?
         links.map((item)=>{
           return(
             <div className='social'>
-           <button className='btnname' className="text-capitalize" style={{color:item.color,height:50,width:200,padding:10,margin:5,fontSize:20,borderColor:'white',borderRadius:10}} onClick={()=>clickedsocial(item.url,item.usernam)}>
+           <button className='btnname'  style={{color:item.color,height:50,width:200,padding:10,margin:5,fontSize:20,borderColor:'white',borderRadius:10}} onClick={()=>clickedsocial(item.url,item.usernam)}><i size='100' className={`fa fa-${item.nameIcon}`}></i>
              
-             {item.title}
+            
              </button>
              
              </div>
