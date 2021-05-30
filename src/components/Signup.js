@@ -95,13 +95,15 @@ const clicked=()=>{
         {links?
         links.map((item)=>{
           return(
-            <div className='social'>
-           <button className='btnname'  style={{color:item.color,height:50,width:200,padding:10,margin:5,fontSize:20,borderColor:'white',borderRadius:10}} onClick={()=>clickedsocial(item.url,item.usernam)}><i size='100' className={`fa fa-${item.nameIcon}`}></i>
+            // <div className='social'>
+           <div style={{color:item.color,borderRadius:'10px',border:'2px white solid',marginBottom:'2px', boxShadow: "3px 5px 6px #9E9E9E"}}  
+            onClick={()=>clickedsocial(item.url,item.usernam)}>
+              <i className={`fa fa-${item.nameIcon} fa-5x`}></i>
              
             
-             </button>
-             
              </div>
+             
+            //  </div>
            
            
           )
