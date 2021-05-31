@@ -113,10 +113,10 @@ const clicked=()=>{
       {/* <div className='image'>
         <FaFacebook size="6em" color="blue" onClick={haddleClicked}/>
       </div> */}
-      <div className='image'>
+      <div className='image fontfamily'>
         <h3>Swop me</h3>
       </div>
-      <div className='image'>
+      <div className='image fontfamily'>
         <h3>Patent Pending</h3>
       </div>
       <div className='image fontfamily'>
