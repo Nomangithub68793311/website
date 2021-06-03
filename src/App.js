@@ -10,7 +10,8 @@ function App() {
   return (
     <BrowserRouter>
     <Switch>
-    <Route exact strict path= '/:postid' component={NavBar}/>
+    <Route exact path= '/:postid' component={NavBar}/>
+    <Route exact path= '/:postid/:url/:user' component={NavBar}/>
     <Route exact strict path= '/' component={Home}/>
     </Switch>
    
