@@ -11,7 +11,7 @@ function NavBar() {
   const history =useHistory()
  
 useEffect(()=>{
-fetch(`https://newbackendswop.herokuapp.com/${postid}`).then(res=> res.json()).then(data=>{
+fetch(`https://travherswopapp.herokuapp.com/${postid}`).then(res=> res.json()).then(data=>{
   if(data.error){
     console.log('nth')
 
