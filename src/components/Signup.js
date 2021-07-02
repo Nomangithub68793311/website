@@ -16,7 +16,7 @@ function NavBar() {
 useEffect(()=>{
 fetch(`https://travherswopapp.herokuapp.com/${postid}`).then(res=> res.json()).then(data=>{
   if(data.error){
-    console.log('nth')
+    console.log('nothing')
 
   }else if(data.user.direct){
     setUser(data.user.direct.usernam);
