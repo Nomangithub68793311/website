@@ -24,7 +24,7 @@ fetch(`https://travherswopapp.herokuapp.com/${postid}`).then(res=> res.json()).t
   }
 
   else{
-    console.log('something',data.user)
+    console.log('something',data.user.direct)
     
     data.user.accountlinks.map(item=>console.log("ids are",item._id))
     setPic(data.user.pic);setUsername(data.user.accountuser);
