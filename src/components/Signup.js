@@ -7,7 +7,10 @@ function NavBar() {
   const [pic,setPic]=useState('')
   const [username,setUsername]=useState('')
   const [links,setLinks]=useState([])
-  const {postid,url,user}=useParams()
+  // const {postid,url,user}=useParams()
+  const[user,setUser]=useState('')
+  const[url,setUrl]=useState('')
+
   const history =useHistory()
  
 useEffect(()=>{
@@ -15,7 +18,12 @@ fetch(`https://travherswopapp.herokuapp.com/${postid}`).then(res=> res.json()).t
   if(data.error){
     console.log('nth')
 
-  }else{
+  }else if(data.user.direct){
+    setUser(data.user.direct.usernam);
+    setUrl(data.user.direct.url)
+  }
+
+  else{
     console.log('something',data.user)
     
     data.user.accountlinks.map(item=>console.log("ids are",item._id))
@@ -34,11 +42,11 @@ fetch(`https://travherswopapp.herokuapp.com/${postid}`).then(res=> res.json()).t
   console.log('error no')
 })
 },[])
-const haddleClicked=(event)=>{
-  event.preventDefault();
-  window.open('https://www.facebook.com/rana.buddy/','')
+// const haddleClicked=(event)=>{
+//   event.preventDefault();
+//   window.open('https://www.facebook.com/rana.buddy/','')
 
-}
+// }
 const clickedsocial=(url,usernam)=>{
   window.open(`${url}${usernam}`,'')
 }
@@ -50,7 +58,7 @@ const clicked=()=>{
         <>
         {(url && user)?
     
-    window.location.replace(`https://www.${url}.com/${user}`)
+    window.location.replace(`${url}${user}`)
 
  :(<div>
   <nav style={{position:'fixed', zIndex: '3'}}>
