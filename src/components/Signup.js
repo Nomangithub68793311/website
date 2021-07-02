@@ -7,7 +7,7 @@ function NavBar() {
   const [pic,setPic]=useState('')
   const [username,setUsername]=useState('')
   const [links,setLinks]=useState([])
-  // const {postid,url,user}=useParams()
+  const {postid}=useParams()
   const[user,setUser]=useState('')
   const[url,setUrl]=useState('')
 
