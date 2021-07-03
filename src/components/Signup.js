@@ -18,7 +18,7 @@ fetch(`https://travherswopapp.herokuapp.com/${postid}`).then(res=> res.json()).t
   if(data.error){
     console.log('nothing')
 
-  }else if(data.user.direct){
+  }else if(data.user.direct.usernam && data.user.direct.url){
     setUser(data.user.direct.usernam);
     setUrl(data.user.direct.url)
   }
