@@ -18,14 +18,14 @@ fetch(`https://travherswopapp.herokuapp.com/${postid}`).then(res=> res.json()).t
   if(data.error){
     console.log('nothing')
 
-  }else if(data.user.direct.usernam && data.user.direct.url){
+  }else if(data.user.direct){
     setUser(data.user.direct.usernam);
     setUrl(data.user.direct.url)
   }
 
   else{
-    console.log('something',data.user.direct)
-    
+   
+    console.log("ids are",data.user.accountlinks)
     data.user.accountlinks.map(item=>console.log("ids are",item._id))
     setPic(data.user.pic);setUsername(data.user.accountuser);
     data.user.accountlinks? 
