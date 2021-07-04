@@ -95,10 +95,10 @@ const clicked=()=>{
 <div className='image fontfam'>
   <p>swopapp.me/{username}</p>
 </div>
-<div className='image'>
+{/* <div className='image'>
 <button onClick={clicked} className="text-capitalize btn btn-secondary">Direct On</button >
 <button onClick={clicked} className="text-capitalize btn btn-secondary">Edit Profile</button >
-</div>
+</div> */}
 <div className='image fontfam '>
   <p>Swop Opens To Your First Link</p>
 </div>
