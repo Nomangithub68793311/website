@@ -60,19 +60,15 @@ const clicked=()=>{
     
     window.location.replace(`${url}${user}`)
 
- :(<div>
-  <nav style={{position:'fixed', zIndex: '3'}}>
+ :(<div >
+  {/* <nav style={{position:'fixed', zIndex: '3'}}>
 <div className="nav-wrapper black" >
-<a href="#" className="brand-logo center" id="colornone">Buy Swop with</a>
-<ul id="nav-mobile" className="right" >
-  {/* <li ><a href="#" >Swop </a></li> */}
-  
-</ul>
+
 </div>
-</nav>
-<nav style={{position:'fixed',zIndex: '2',top:'55.5px'}}>
+</nav> */}
+<nav style={{position:'fixed',zIndex: '1'}}>
 <div className="nav-wrapper white" >
-<a href="#" className="brand-logo center" id="colorswop">Swop</a>
+<a href="#" className="brand-logo center" id="colorswop"><img src='/images/swopp.png'  className="imgbar"  alt='srcoic'/></a>
 <ul id="nav-mobile" className="right" >
   {/* <li ><a href="#" >Swop </a></li> */}
   
@@ -81,16 +77,16 @@ const clicked=()=>{
 </nav>
 
 
-<div className="card shadow"style={{backgroundColor:'white'}} >
-  <div className='image' style={{marginTop:'65px'}}>
+<div className="maindiv card"style={{backgroundColor:'white'}} >
+  <div className='image ' style={{marginTop:'65px'}}>
     {
-      (pic)?<img src={pic} className="img-fluid" alt='pic'/>:
-      <img src='/images/propic.png'  alt='pic'/>
+      (pic)?<img src={pic} className="img-fluid" alt='pic'/>:null
+      // <img src='/images/propic.png'  alt='pic'/>
     }
 
 </div>
 <div className='image'>
-  <h3>username </h3>
+  <h3>{username.charAt(0).toUpperCase()+username.slice(1)} </h3>
 </div>
 <div className='image fontfam'>
   <p>swopapp.me/{username}</p>
@@ -100,7 +96,7 @@ const clicked=()=>{
 <button onClick={clicked} className="text-capitalize btn btn-secondary">Edit Profile</button >
 </div> */}
 <div className='image fontfam '>
-  <p>Swop Opens To Your First Link</p>
+ 
 </div>
 {/* <div className='image fontfam '>
   <i className="fa fa-linkedin "></i>
@@ -127,15 +123,15 @@ const clicked=()=>{
 {/* <div className='image'>
   <FaFacebook size="6em" color="blue" onClick={haddleClicked}/>
 </div> */}
-<div className='image fontfamily'>
+{/* <div className='image fontfamily'>
   <h3>Swop me</h3>
-</div>
+</div> */}
 <div className='image fontfamily'>
-  <h3>Patent Pending</h3>
+  <h3  style={{fontSize:15}}>Patent Pending</h3>
 </div>
-<div className='image fontfamily'>
+{/* <div className='image fontfamily'>
   <p>Support Center</p>
-</div>
+</div> */}
 
 
 
