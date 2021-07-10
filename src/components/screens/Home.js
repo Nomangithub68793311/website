@@ -26,7 +26,7 @@ function Home() {
     <h1 style={{fontSize:50,color:'white',marginLeft:50}}> For Your Friends And Family</h1> 
     <h1 style={{fontSize:15,color:'white',marginLeft:50}}> LET YOU SHARE EVERYTHING IN YOUR LIFE WITH A SIMPLE WAY</h1>    
     <img src='/images/google.png'  className="imgbarhome"  alt='srcoic' onClick={()=>click()}/>
-    <img src='/images/new.png'  className="imgbarhome" onClick={()=>goclick()}  alt='yooy'/>
+    <img src='/images/newpicc.png'  className="imgbarhome" onClick={()=>goclick()}  alt='yooy'/>
     </div>
     <div>
     <div>
