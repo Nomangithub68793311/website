@@ -12,7 +12,7 @@ function Home() {
     return (<>
         <div className='boddy'>
         <nav >
-<div className="nav-wrapper boddy " >
+<div className="nav-wrapper black " >
 <a href="#" className="brand-logo center" id="colorswop"><img src='/images/swopp.png'  className="imgbar2"  alt='srcoic'/></a>
 <ul id="nav-mobile" className="right" >
   {/* <li ><a href="#" >Swop </a></li> */}
