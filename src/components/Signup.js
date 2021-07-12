@@ -89,7 +89,7 @@ const clicked=()=>{
   <h3>{username.charAt(0).toUpperCase()+username.slice(1)} </h3>
 </div>
 <div className='image fontfam'>
-  <p>swopapp.me/{username}</p>
+  <p>swopme.app/{username}</p>
 </div>
 {/* <div className='image'>
 <button onClick={clicked} className="text-capitalize btn btn-secondary">Direct On</button >
