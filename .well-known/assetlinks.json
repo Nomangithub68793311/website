@@ -1,0 +1,5 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target" : { "namespace": "android_app", "package_name": "com.swop",
+                 "sha256_cert_fingerprints": ["DE:9C:6D:06:A0:26:8E:CE:39:20:02:7B:E1:E7:CA:6C:56:33:9B:70:A2:91:91:17:26:9C:AF:0A:A4:6B:20:0B"] }
+  }]
