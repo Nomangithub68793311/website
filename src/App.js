@@ -14,7 +14,6 @@ function App() {
     <Route exact path= '/:postid' component={NavBar}/>
     {/* <Route exact path= '/:postid/:url/:user' component={NavBar}/> */}
     <Route exact strict path= '/' component={Home}/>
-    <Route exact strict path= '/apple-app-site-association' component={Links}/>
     </Switch>
    
     </BrowserRouter>
