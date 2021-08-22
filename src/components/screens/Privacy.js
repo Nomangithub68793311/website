@@ -3,7 +3,7 @@ import Background from '../imagess/background.png';
 
 function Privacy() {
     return (
-        <div style={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column',background:`url(${Background})`}}>
+        <div style={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column',background:`url(${Background})`,backgroundRepeat:'no-repeat'}}>
             <h4>plz abide by aour privacy and policy</h4>
             <pre style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
     Twinkle, twinkle, little star, <br />

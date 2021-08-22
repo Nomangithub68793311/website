@@ -68,7 +68,7 @@ function AdminDataPage() {
 // },[])
 
     return (
-    <div   style={{background:`url(${Background})`}}> 
+    <div   style={{background:`url(${Background})`,backgroundRepeat:'no-repeat'}}> 
      {/* <img src='/images/background.png'  className="imgbarhomeiphone displayone"  alt='haha'/> */}
    
         <div style={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column'}}>

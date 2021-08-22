@@ -1,4 +1,5 @@
 import React from 'react'
+import Background from '../imagess/background.png';
 
 function Home() {
 
@@ -10,7 +11,7 @@ function Home() {
         window.open('https://play.google.com/store/apps','')
     }
     return (<>
-        <div className='boddy'>
+        <div className='boddy' style={{background:`url(${Background})`,backgroundRepeat:'no-repeat'}}>
         <nav >
 <div className="nav-wrapper black " >
 <a href="#" className="brand-logo center" id="colorswop"><img src='/images/swopp.png'  className="imgbar2"  alt='srcoic'/></a>
@@ -25,8 +26,8 @@ function Home() {
     <h1 style={{fontSize:50,color:'white',marginLeft:50}}>Amazing Swop Experience </h1>
     <h1 style={{fontSize:50,color:'white',marginLeft:50}}> For Your Friends And Family</h1> 
     <h1 style={{fontSize:15,color:'white',marginLeft:50}}> LET YOU SHARE EVERYTHING IN YOUR LIFE WITH A SIMPLE WAY</h1>    
-    <img src='/images/google.png'  className="imgbarhome"  alt='srcoic' onClick={()=>click()}/>
-    <img src='/images/newpicc.png'  className="imgbarhome" onClick={()=>goclick()}  alt='yooy'/>
+    <img src='/images/google.png'  className="imgbarhome"  alt='srcoic' onClick={()=>goclick()}/>
+    <img src='/images/newpicc.png'  className="imgbarhome" onClick={()=> click()}  alt='yooy'/>
     </div>
     <div>
     <div>

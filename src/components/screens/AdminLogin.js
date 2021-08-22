@@ -1,5 +1,6 @@
 import React ,{useEffect,useState}from 'react'
 import { useHistory } from "react-router-dom";
+import Background from '../imagess/background.png';
 
 import { Alert } from 'react-alert'
 function AdminLogin() {
@@ -58,7 +59,7 @@ function AdminLogin() {
             }
     }
     return (
-    <div style={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
+    <div style={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column',background:`url(${Background})`,backgroundRepeat:'no-repeat'}}>
      <div>
    <input type='email' placeholder='email' value={email} onChange={(e)=>setEmail(e.target.value)}/>
      </div>
