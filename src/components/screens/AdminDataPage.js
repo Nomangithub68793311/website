@@ -91,7 +91,7 @@ function AdminDataPage() {
              <td  >{item.email}</td> 
             
             
-             <td  >{item.nfcGet}</td> 
+             <td  >{item.nfcGet?item.nfcGet:0}</td> 
             
              
              <td  >{item.totalAmount}</td> 
