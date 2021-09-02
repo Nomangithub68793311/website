@@ -108,10 +108,16 @@ li a{
   font-family: 'Itim', cursive;
 }
 .img-fluid{
-  width: 400px;
-  height:300px;
+  width: 150px;
+  height:150px;
+  border-radius: 220px;
   
   
+}
+.img-box{
+  width:"30%";
+  height: 30px;;
+  border-radius: 200;
 }
 .card{
   width: 45%;
@@ -209,4 +215,11 @@ li a{
 .bg-image {
   background-image: url('https://www.freepik.com/free-vector/white-abstract-background-design_12188678.htm#&position=0');
   
+}
+
+.image-contact{
+  margin: 10px auto;
+  width: 20%;
+ 
+
 }

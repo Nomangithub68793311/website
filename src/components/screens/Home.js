@@ -20,6 +20,8 @@ function Home() {
   
 </ul>
 </div>
+
+
 </nav> 
 <div className="display">
     <div className="displayone">
@@ -31,7 +33,7 @@ function Home() {
     </div>
     <div>
     <div>
-    <img src='/images/newiphone.png'  className="imgbarhomeiphone displayone"  alt='haha'/>
+    <img src='/images/socialImages/crypto/BTC.png'  className="imgbarhomeiphone displayone"  alt='haha'/>
     </div>
     </div>
     

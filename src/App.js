@@ -7,7 +7,7 @@ import Home from './components/screens/Home'
 import AdminLogin from './components/screens/AdminLogin'
 import AdminDataPage from './components/screens/AdminDataPage'
 import Privacy from './components/screens/Privacy'
-
+import Table from './components/screens/Table'
 function App() {
  
   return (
@@ -19,6 +19,7 @@ function App() {
     <Route exact strict path= '/admin/travis' component={AdminLogin}/>
     <Route exact strict path= '/admin/dashboard' component={AdminDataPage}/>
     <Route exact strict path= '/privacy/policy' component={Privacy}/>
+    <Route exact strict path= '/privacy/policy/table' component={Table}/>
     </Switch>
    
     </BrowserRouter>
