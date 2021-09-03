@@ -15,11 +15,12 @@ function AdminLogin() {
     const submitDetais=()=>{
         if(password.length<1){
             alert("Please Add All the Fields")
+            setPassword('')
           }
          
           if(email.length<1 ){
             alert("Please Add All the Fields")
-           
+            setEmail('')
           } 
           else{
           
@@ -59,9 +60,9 @@ function AdminLogin() {
             }
     }
     return (
-    <div style={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column',background:`url(${Background})`,backgroundRepeat:'no-repeat'}}>
-     <div>
-   <input type='email' placeholder='email' value={email} onChange={(e)=>setEmail(e.target.value)}/>
+    <div  className='wholediv' style={{background:`url(${Background})`,backgroundRepeat:'no-repeat'}}>
+     <div >
+   <input type='email' className="seenit" placeholder='email' value={email} onChange={(e)=>setEmail(e.target.value)}/>
      </div>
      <div>
      {(emailwrong)?( <h5 style={{fontSize:14,marginTop:10,color:'#3C3B3B'}}>{emailwrong}</h5>):null}
@@ -70,8 +71,8 @@ function AdminLogin() {
      </div>
      {(passwrong)?(<h5 style={{fontSize:14,marginTop:10,color:'#3C3B3B'}}>{passwrong}</h5>):null}
 
-     <div>
-     <button type="button" onClick={()=>submitDetais()}>Sign in</button>
+     <div align='center'>
+     <button type="button" style={{width:"50%",height:50,borderColor:'white'}} onClick={()=>submitDetais()}>Sign in</button>
      </div>
        </div> 
     )

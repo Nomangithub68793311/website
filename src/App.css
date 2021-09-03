@@ -223,3 +223,16 @@ li a{
  
 
 }
+.wholediv{
+
+  margin: 10px auto;
+  width: 30%;
+ 
+}
+.seenit{
+  border: 2px solid red;
+}
+.privacy{
+  margin: 0px auto;
+  width: 50%;
+}
