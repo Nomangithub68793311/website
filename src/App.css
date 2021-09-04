@@ -236,3 +236,22 @@ li a{
   margin: 0px auto;
   width: 50%;
 }
+
+
+
+@media only screen and (max-width: 600px) {
+  .image-contact{
+    margin: 10px auto;
+    width: 100%;
+   
+  
+  }
+  .img-fluid{
+    width: 200px;
+    height:200px;
+    border-radius: 240px;
+    
+    
+  }
+  
+}

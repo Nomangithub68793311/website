@@ -103,9 +103,9 @@ const clicked=()=>{
 <div  style={{display:'flex',flexDirection:'row',marginTop:5,flexWrap:'wrap',flexGrow:1,alignItems:'stretch',justifyContent:'space-evenly'}}>
   {links?
   links.map((item)=>{
-    return(
+    return( 
       // <div className='social'>
-     <div style={{width:"30%",alignSelf:'center',display:'flex',justifyContent:'center',marginTop:10}}
+     <div className="responDiv" style={{width:"30%",alignSelf:'center',display:'flex',justifyContent:'center',marginTop:10}}
       onClick={()=>clickedsocial(item.url,item.usernam)}>
         {/* <i className={`fa fa-${item.nameIcon} fa-5x`}></i> */}
         <img src={`/images/socialImages/${item.group}/${item.picname}`} 
