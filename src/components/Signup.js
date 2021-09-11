@@ -83,9 +83,7 @@ const clicked=()=>{
       }
 
   </div>
-    <div className='image'>
-      <h3>{username.charAt(0).toUpperCase()+username.slice(1)} </h3>
-    </div>
+   
     <div className='image fontfam'>
       <p>swopme.app/{username}</p>
     </div>
