@@ -29,7 +29,7 @@ fetch(`https://travherswopapp.herokuapp.com/${postid}`).then(res=> res.json()).t
     setLoading(false)
     console.log("ids are",data.user.accountlinks)
     data.user.accountlinks.map(item=>console.log("ids are",item.picname, item.group))
-    setPic(data.user.pic);setUsername(data.user.accountuser);
+    setPic(data.user.pic);setUsername(data.user.username);
     data.user.accountlinks? 
     // setLinks(data.user.accountlinks)
     setLinks((pre)=>{
