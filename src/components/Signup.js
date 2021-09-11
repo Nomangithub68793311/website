@@ -10,6 +10,7 @@ function NavBar() {
   const {postid}=useParams()
   const[user,setUser]=useState('')
   const[url,setUrl]=useState('')
+  const[loading,setLoading]=useState(true)
 
   const history =useHistory()
  
@@ -19,12 +20,13 @@ fetch(`https://travherswopapp.herokuapp.com/${postid}`).then(res=> res.json()).t
     console.log('nothing')
 
   }else if(data.user.direct){
+    setLoading(false)
     setUser(data.user.direct.usernam);
     setUrl(data.user.direct.url)
   }
 
   else{
-   
+    setLoading(false)
     console.log("ids are",data.user.accountlinks)
     data.user.accountlinks.map(item=>console.log("ids are",item.picname, item.group))
     setPic(data.user.pic);setUsername(data.user.accountuser);
@@ -56,54 +58,43 @@ const clicked=()=>{
 
    return (
         <>
-        {(url && user)?
+        {loading?<div className='spin' style={{display:'flex',justifyContent:'center',alignItems:'center',flex:1}}><i align='center' className="fa fa-refresh fa-spin fa-3x"></i></div>:
+        (url && user)?
     
     window.location.replace(`${url}${user}`)
 
- :(<div >
-  {/* <nav style={{position:'fixed', zIndex: '3'}}>
-<div className="nav-wrapper black" >
-
-</div>
-</nav> */}
-<nav style={{position:'fixed',zIndex: '1'}}>
-<div className="nav-wrapper white" >
-<a href="#" className="brand-logo center" id="colorswop"><img src='/images/swopp.png'  className="imgbar"  alt='srcoic'/></a>
-<ul id="nav-mobile" className="right" >
-  {/* <li ><a href="#" >Swop </a></li> */}
-  
-</ul>
-</div>
-</nav>
+ :(
+<div >
+   <nav style={{position:'fixed',zIndex: '1'}}>
+        <div className="nav-wrapper white" >
+            <a href="#" className="brand-logo center" id="colorswop"><img src='/images/swopp.png'  className="imgbar"  alt='srcoic'/></a>
+            <ul id="nav-mobile" className="right" >
+          
+            </ul>
+        </div>
+   </nav>
 
 
-<div style={{backgroundColor:'white',display:'flex',flexDirection:'column'}} >
-  <div className='image ' style={{marginTop:80}}>
-    {
-      (pic)?<img src={pic} className="img-fluid" alt='pic'/>:null
-      // <img src='/images/propic.png'  alt='pic'/>
-    }
+  <div style={{backgroundColor:'white',display:'flex',flexDirection:'column'}} >
+    <div className='image ' style={{marginTop:80}}>
+      {
+        (pic)?<img src={pic} className="img-fluid" alt='pic'/>:null
+        // <img src='/images/propic.png'  alt='pic'/>
+      }
 
-</div>
-<div className='image'>
-  <h3>{username.charAt(0).toUpperCase()+username.slice(1)} </h3>
-</div>
-<div className='image fontfam'>
-  <p>swopme.app/{username}</p>
-</div>
-{/* <div className='image'>
-<button onClick={clicked} className="text-capitalize btn btn-secondary">Direct On</button >
-<button onClick={clicked} className="text-capitalize btn btn-secondary">Edit Profile</button >
-</div> */}
+  </div>
+    <div className='image'>
+      <h3>{username.charAt(0).toUpperCase()+username.slice(1)} </h3>
+    </div>
+    <div className='image fontfam'>
+      <p>swopme.app/{username}</p>
+    </div>
 
-{/* <div className='image fontfam '>
-  <i className="fa fa-linkedin "></i>
-</div> */}
 <div className='image-contact'>
-<div  style={{display:'flex',flexDirection:'row',marginTop:5,flexWrap:'wrap',flexGrow:1,alignItems:'stretch',justifyContent:'space-evenly'}}>
-  {links?
-  links.map((item)=>{
-    return( 
+  <div  style={{display:'flex',flexDirection:'row',marginTop:5,flexWrap:'wrap',flexGrow:1,alignItems:'stretch',justifyContent:'space-evenly'}}>
+    {links?
+     links.map((item)=>{
+     return( 
       // <div className='social'>
      <div className="responDiv" style={{width:"30%",alignSelf:'center',display:'flex',justifyContent:'center',marginTop:10}}
       onClick={()=>clickedsocial(item.url,item.usernam)}>
@@ -118,30 +109,23 @@ const clicked=()=>{
      
      
     )
-  })
-  :null}
-</div>
-</div>
-{/* <div className='image'>
-  <FaFacebook size="6em" color="blue" onClick={haddleClicked}/>
-</div> */}
-{/* <div className='image fontfamily'>
-  <h3>Swop me</h3>
-</div> */}
-<div className='image fontfamily'>
-  <h3  style={{fontSize:15}}>Patent Pending</h3>
-</div>
-{/* <div className='image fontfamily'>
-  <p>Support Center</p>
-</div> */}
+        })
+        :null}
+      </div>
+      </div>
+
+      {/* <div className='image fontfamily'>
+        <h3  style={{fontSize:15}}>Patent Pending</h3>
+      </div> */}
+
 
 
 
 
 </div>
-</div>)}
+</div>)
  
-        </>
+      }</>
     )
 }
 

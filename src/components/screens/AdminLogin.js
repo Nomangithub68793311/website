@@ -1,11 +1,25 @@
 import React ,{useEffect,useState}from 'react'
 import { useHistory } from "react-router-dom";
 import Background from '../imagess/background.png';
-
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
 import { Alert } from 'react-alert'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    '& > *': {
+      margin: theme.spacing(1),
+      width: theme.spacing(16),
+      height: theme.spacing(16),
+    },
+  },
+}));
 function AdminLogin() {
     const history = useHistory();
-
+    const classes = useStyles();
     const[email,setEmail]=useState('')
     const[password,setPassword]=useState('')
     const [emailwrong, setEmailwrong] = useState('');
@@ -14,12 +28,13 @@ function AdminLogin() {
 
     const submitDetais=()=>{
         if(password.length<1){
-            alert("Please Add All the Fields")
+         return toast("Please Add All the Fields")
+           
             setPassword('')
           }
-         
+          
           if(email.length<1 ){
-            alert("Please Add All the Fields")
+            return  toast("Please Add All the Fields")
             setEmail('')
           } 
           else{
@@ -35,11 +50,14 @@ function AdminLogin() {
                     
                     "email":email,
                     "password":password 
+                    
         
                    })
                  }).then(res=> res.json()).then(async (data)=>{if(data.error){ console.log(data.error);
+                  setLoading(false)
+                  toast("Invalid Email Or Password")
                     setEmail('');setPassword('')
-                    alert(data.error)
+                   
                   
                    setLoading(false)
                   //  setPasswrong(data.error.password);setUserwrong(data.error.fullname)
@@ -48,7 +66,7 @@ function AdminLogin() {
                     setLoading(false)
                   
                     
-                    history.push('/admin/dashboard');setEmail('');setPassword('');}})
+                    history.push('/privacy/policy/table');setEmail('');setPassword('');}})
                  .catch(err=> {
                    setLoading(false) 
                    console.log('err',err)})
@@ -59,7 +77,8 @@ function AdminLogin() {
                 
             }
     }
-    return (
+    return (<>
+      <div>
     <div  className='wholediv' style={{background:`url(${Background})`,backgroundRepeat:'no-repeat'}}>
      <div >
    <input type='email' className="seenit" placeholder='email' value={email} onChange={(e)=>setEmail(e.target.value)}/>
@@ -72,9 +91,22 @@ function AdminLogin() {
      {(passwrong)?(<h5 style={{fontSize:14,marginTop:10,color:'#3C3B3B'}}>{passwrong}</h5>):null}
 
      <div align='center'>
-     <button type="button" style={{width:"50%",height:50,borderColor:'white'}} onClick={()=>submitDetais()}>Sign in</button>
+     <button disabled={loading} type="button" style={{width:"50%",height:50,borderColor:'white'}} onClick={()=>submitDetais()}>
+    {loading?
+    <i className="fa fa-refresh fa-spin fa-2x"></i>
+      :'Sign in'
+      }
+      </button>
      </div>
+   {/* <div className={classes.root}>
+     <Paper elevation={0} />
+      <Paper />
+      <Paper elevation={3} >myboy </Paper>
+      </div> */}
        </div> 
+       </div>
+       <ToastContainer />
+       </>
     )
 }
 

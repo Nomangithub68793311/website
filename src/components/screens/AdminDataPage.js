@@ -66,6 +66,9 @@ function AdminDataPage() {
 //     }
    
 // },[])
+const activateLasers=()=>{
+    console.log('profile me')
+}
 
     return (
     <div   style={{background:`url(${Background})`,backgroundRepeat:'no-repeat'}}> 
@@ -81,6 +84,7 @@ function AdminDataPage() {
         <th>TotalAmount</th>
         <th>PaymentAddress</th>
         <th >Address</th>
+        <th >Action</th>
     </tr>
  
        {user?user.map((item)=>{
@@ -97,7 +101,8 @@ function AdminDataPage() {
              <td  >{item.totalAmount}</td> 
              <td  >{item.paymentAddress?item.paymentAddress:'empty'}</td> 
              <td  >{item.data?item.data.address:''}{" "}{ item.data?item.data.zipcode:''}{" "}{  item.data?item.data.city:''}{" "}{item.data?item.data.state:''}{" "}{item.data?item.data.country:''}</td> 
-            {/* {item.data.map(itemBio=><td>{itemBio.city}</td>)} */}
+             <td  ><button style={{margin:10}} onClick={activateLasers}> Edit </button><button onClick={activateLasers}>delete</button></td> 
+
             
             
              </tr>

@@ -236,7 +236,9 @@ li a{
   margin: 0px auto;
   width: 50%;
 }
-
+.spin{
+  margin: 300px auto;
+}
 
 
 @media only screen and (max-width: 600px) {
