@@ -77,7 +77,12 @@ return()=>{
         
        
     ]
-    
+    const nfcSent=()=>{
+        toast("NFC Sent Successfully")
+    }
+    const paymentDone=()=>{
+        toast("Payment Done Successfully")
+    }
 
     const submitDetais=()=>{
         history.push('/admin/travis')
@@ -102,12 +107,12 @@ return()=>{
                 {
                   icon: Payment,
                   tooltip: 'referral amount',
-                  onClick: (event, rowData) => history.push('/privacy/policy')
+                  onClick: (event, rowData) => paymentDone()
                 },
                 {
                   icon: Nfc,
                   tooltip: 'Send Nfc',
-                  onClick: (event, rowData)=>console.log("You want to delete ",rowData._id)
+                  onClick: (event, rowData)=>nfcSent()
                 }
               ]}
             editable={{
