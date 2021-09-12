@@ -55,10 +55,6 @@ return()=>{
         {title:'Name',field:'fullname',align:'center',},
 
         {title:'Email',field:'email',align:'center',},
-        {title:'NFC',field:'nfcGet' ,align:'center',},
-        {title:'Totalamount',field:'totalAmount',align:'center',type:'currency',currencySetting:{minimumFractionDigits:0 }},
-        {title:'Paymentaddress',field:'paymentAddress',align:'center'},
-        {title:'RequestPayment',field:'paymentrequest',align:'center',},
         {title:'Address',align:'center',field:'data',
         render: (rowData) => (
             rowData.data? <Select>
@@ -71,7 +67,14 @@ return()=>{
             // rowData.data.address +`${" "}`+ rowData.data.city +`${" "}`+ rowData.data.zipcode  +`${" "}`+rowData.data.state 
         )
     
-    }
+    },
+        {title:'NFC',field:'nfcGet' ,align:'center',},
+        {title:'TotalEarned',field:'totalearned',align:'center',},
+        {title:'Totalamount',field:'totalAmount',align:'center',type:'currency',currencySetting:{minimumFractionDigits:0 }},
+        {title:'Paymentaddress',field:'paymentAddress',align:'center'},
+        {title:'RequestPayment',field:'paymentrequest',align:'center',},
+        
+        
        
     ]
     
