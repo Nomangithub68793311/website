@@ -10,10 +10,17 @@ function Home() {
     const goclick =()=>{
         window.open('https://play.google.com/store/apps','')
     }
+    const clickedsocial=()=>{
+        console.log('sdfd')
+    }
+    const submitDetais=()=>{
+        console.log('sdfd')
+    }
+
     return (<>
         <div className='boddy' style={{background:`url(${Background})`,backgroundRepeat:'no-repeat'}}>
-        <nav >
-<div className="nav-wrapper black " >
+        <nav style={{position:'fixed',zIndex: '1'}} >
+<div className="nav-wrapper white " >
 <a href="#" className="brand-logo center" id="colorswop"><img src='/images/swopp.png'  className="imgbar2"  alt='srcoic'/></a>
 <ul id="nav-mobile" className="right" >
   {/* <li ><a href="#" >Swop </a></li> */}
@@ -23,30 +30,83 @@ function Home() {
 
 
 </nav> 
-<div className="display">
-    <div className="displayone">
-    <h1 style={{fontSize:50,color:'white',marginLeft:50}}>Amazing Swop Experience </h1>
-    <h1 style={{fontSize:50,color:'white',marginLeft:50}}> For Your Friends And Family</h1> 
-    <h1 style={{fontSize:15,color:'white',marginLeft:50}}> LET YOU SHARE EVERYTHING IN YOUR LIFE WITH A SIMPLE WAY</h1>    
-    <img src='/images/google.png'  className="imgbarhome"  alt='srcoic' onClick={()=>goclick()}/>
-    <img src='/images/newpicc.png'  className="imgbarhome" onClick={()=> click()}  alt='yooy'/>
+<div align="center">
+<img src='/images/swoplogo.png' className="img-fluid" alt='hihi' style={{marginTop:80}}/>
+
+</div>
+
+<div align="center" style={{marginTop:20}}>
+      <h2>SWOP</h2>
     </div>
-    <div>
-    <div>
-    <img src='/images/socialImages/crypto/BTC.png'  className="imgbarhomeiphone displayone"  alt='haha'/>
-    </div>
-    </div>
+    <div className='image-contact'>
+    <div  style={{display:'flex',flexDirection:'row',marginTop:5,flexWrap:'wrap',flexGrow:1,alignItems:'stretch',justifyContent:'space-evenly'}}>
     
-</div> 
-<div  className="displayfooter">
-<div>
+      
+     <div className="responDiv" style={{width:"30%",alignSelf:'center',display:'flex',justifyContent:'center',marginTop:10}}
+      onClick={()=>clickedsocial()}>
+        
+        <img src='/images/socialImages/social/Facebook.png'
+         style={{width:"100%",alignSelf:'center',height:"100%"}}
+         alt={'haha'+ Math.floor(Math.random()*100)}/>
+      </div>
+      <div className="responDiv" style={{width:"30%",alignSelf:'center',display:'flex',justifyContent:'center',marginTop:10}}
+      onClick={()=>clickedsocial()}>
+      <img src='/images/socialImages/social/Instagram.png'
+         style={{width:"100%",alignSelf:'center',height:"100%"}}
+         alt={'haha'+ Math.floor(Math.random()*100)}/>
+  </div>
+<div className="responDiv" style={{width:"30%",alignSelf:'center',display:'flex',justifyContent:'center',marginTop:10}}
+      onClick={()=>clickedsocial()}>
+         <img src='/images/socialImages/social/Twitter.png'
+         style={{width:"100%",alignSelf:'center',height:"100%"}}
+         alt={'haha'+ Math.floor(Math.random()*100)}/>
+</div>
+<div className="responDiv" style={{width:"30%",alignSelf:'center',display:'flex',justifyContent:'center',marginTop:10}}
+      onClick={()=>clickedsocial()}>
+          <img src='/images/socialImages/social/Linkedin.png'
+         style={{width:"100%",alignSelf:'center',height:"100%"}}
+         alt={'haha'+ Math.floor(Math.random()*100)}/>
+</div>
+<div className="responDiv" style={{width:"30%",alignSelf:'center',display:'flex',justifyContent:'center',marginTop:10}}
+      onClick={()=>clickedsocial()}>
+          <img src='/images/socialImages/social/Youtube.png'
+         style={{width:"100%",alignSelf:'center',height:"100%"}}
+         alt={'haha'+ Math.floor(Math.random()*100)}/> </div>
+<div className="responDiv" style={{width:"30%",alignSelf:'center',display:'flex',justifyContent:'center',marginTop:10}}
+      onClick={()=>clickedsocial()}>
+          <img src='/images/socialImages/social/Pinterest.png'
+         style={{width:"100%",alignSelf:'center',height:"100%"}}
+         alt={'haha'+ Math.floor(Math.random()*100)}/>
+</div>
+<div className="responDiv" style={{width:"30%",alignSelf:'center',display:'flex',justifyContent:'center',marginTop:10}}
+      onClick={()=>clickedsocial()}>
+          <img src='/images/socialImages/social/TikTok.png'
+         style={{width:"100%",alignSelf:'center',height:"100%"}}
+         alt={'haha'+ Math.floor(Math.random()*100)}/>
+</div>
+<div className="responDiv" style={{width:"30%",alignSelf:'center',display:'flex',justifyContent:'center',marginTop:10}}
+      onClick={()=>clickedsocial()}>
+         <img src='/images/socialImages/social/Snapchat.png'
+         style={{width:"100%",alignSelf:'center',height:"100%"}}
+         alt={'haha'+ Math.floor(Math.random()*100)}/>
+</div>
+<div className="responDiv" style={{width:"30%",alignSelf:'center',display:'flex',justifyContent:'center',marginTop:10}}
+      onClick={()=>clickedsocial()}>
+         <img src='/images/socialImages/more/Website.png'
+         style={{width:"100%",alignSelf:'center',height:"100%"}}
+         alt={'haha'+ Math.floor(Math.random()*100)}/>
+       
+     </div>
+     
+     </div>
+     <div align='center' style={{marginTop:20,marginBottom:30}}>
+                {/* <ExitToApp onClick={()=>submitDetais()}/> */}
+     <button type="button" style={{width:"50%",borderRadius:15, height:50,color:'#FCFCFF',backgroundColor:'#536DEF'}} onClick={()=>submitDetais()}>Get SWOP</button>
+     </div>
+      </div>
 
 </div>
-<div>
-
-</div>
-</div>
-        </div>
+        
         </>
     )
 }

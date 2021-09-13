@@ -57,14 +57,14 @@ return()=>{
         {title:'Email',field:'email',align:'center',},
         {title:'Address',align:'center',field:'data',
         render: (rowData) => (
-            rowData.data? <Select>
-            <MenuItem value="address">{rowData.data.address}</MenuItem>
-            <MenuItem value="city">{rowData.data.city}</MenuItem>
-            <MenuItem value="zipcode">{rowData.data.zipcode}</MenuItem>
-            <MenuItem value="state">{rowData.data.state}</MenuItem>
-            <MenuItem value="country">{rowData.data.country}</MenuItem>
-            </Select>: null
-            // rowData.data.address +`${" "}`+ rowData.data.city +`${" "}`+ rowData.data.zipcode  +`${" "}`+rowData.data.state 
+            // rowData.data? <Select>
+            // <MenuItem value="address">{rowData.data.address}</MenuItem>
+            // <MenuItem value="city">{rowData.data.city}</MenuItem>
+            // <MenuItem value="zipcode">{rowData.data.zipcode}</MenuItem>
+            // <MenuItem value="state">{rowData.data.state}</MenuItem>
+            // <MenuItem value="country">{rowData.data.country}</MenuItem>
+            // </Select>: null
+            rowData.data? rowData.data.address +`${" "}`+ rowData.data.city +`${" "}`+ rowData.data.zipcode  +`${" "}`+rowData.data.state +`${" "}`+rowData.data.country:null 
         )
     
     },

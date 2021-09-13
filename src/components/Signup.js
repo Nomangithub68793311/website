@@ -52,8 +52,8 @@ fetch(`https://travherswopapp.herokuapp.com/${postid}`).then(res=> res.json()).t
 const clickedsocial=(url,usernam)=>{
   window.open(`${url}${usernam}`,'')
 }
-const clicked=()=>{
-  alert("Please Download Swop")
+const submitDetais=()=>{
+  console.log("Please Download Swop")
 }
 
    return (
@@ -67,7 +67,7 @@ const clicked=()=>{
 <div >
    <nav style={{position:'fixed',zIndex: '1'}}>
         <div className="nav-wrapper white" >
-            <a href="#" className="brand-logo center" id="colorswop"><img src='/images/swopp.png'  className="imgbar"  alt='srcoic'/></a>
+            <a href="https://swopme.app" className="brand-logo center" id="colorswop"><img src='/images/swopp.png'  className="imgbar"  alt='srcoic'/></a>
             <ul id="nav-mobile" className="right" >
           
             </ul>
@@ -84,7 +84,7 @@ const clicked=()=>{
 
   </div>
    
-    <div className='image fontfam'>
+    <div className='image fontfam' style={{marginTop:20}}>
       <p>swopme.app/{username}</p>
     </div>
 
@@ -117,7 +117,10 @@ const clicked=()=>{
       </div> */}
 
 
-
+<div align='center' style={{marginTop:20,marginBottom:30}}>
+                {/* <ExitToApp onClick={()=>submitDetais()}/> */}
+     <button type="button" style={{width:"50%",borderRadius:15, height:50,color:'#FCFCFF',backgroundColor:'#536DEF'}} onClick={()=>submitDetais()}>Get SWOP</button>
+     </div>
 
 
 </div>
