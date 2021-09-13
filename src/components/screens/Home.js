@@ -11,7 +11,8 @@ function Home() {
         window.open('https://play.google.com/store/apps','')
     }
     const clickedsocial=(url)=>{
-        window.location.replace(url)    }
+        window.open(url,'')
+          }
     const submitDetais=()=>{
         console.log('sdfd')
     }
