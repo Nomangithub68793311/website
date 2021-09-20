@@ -86,7 +86,7 @@ const submitDetais=()=>{
 
   </div>
   <div className='image fontfam' style={{marginTop:20}}>
-      <p>{account}</p>
+      <h1>{account}</h1>
     </div>
     <div className='image fontfam' >
       <p>swopme.app/{username}</p>
