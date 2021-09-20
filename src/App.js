@@ -8,6 +8,7 @@ import AdminLogin from './components/screens/AdminLogin'
 import AdminDataPage from './components/screens/AdminDataPage'
 import Privacy from './components/screens/Privacy'
 import Table from './components/screens/Table'
+import CircularIndeterminate from './components/screens/Texst'
 function App() {
  
   return (

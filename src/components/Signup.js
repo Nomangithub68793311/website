@@ -2,10 +2,12 @@ import React ,{useEffect,useState}from 'react'
 import { Fragment } from 'react'
 import  {link,useParams,useHistory} from 'react-router-dom'
 import { FaFacebook } from 'react-icons/fa';
-
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 function NavBar() {
   const [pic,setPic]=useState('')
   const [username,setUsername]=useState('')
+  const [account,setAccount]=useState('')
   const [links,setLinks]=useState([])
   const {postid}=useParams()
   const[user,setUser]=useState('')
@@ -29,7 +31,7 @@ fetch(`https://travherswopapp.herokuapp.com/${postid}`).then(res=> res.json()).t
     setLoading(false)
     console.log("ids are",data.user.accountlinks)
     data.user.accountlinks.map(item=>console.log("ids are",item.picname, item.group))
-    setPic(data.user.pic);setUsername(data.user.username);
+    setPic(data.user.pic);setUsername(data.user.username);setAccount(data.user.accountuser)
     data.user.accountlinks? 
     // setLinks(data.user.accountlinks)
     setLinks((pre)=>{
@@ -58,7 +60,7 @@ const submitDetais=()=>{
 
    return (
         <>
-        {loading?<div className='spin' style={{display:'flex',justifyContent:'center',alignItems:'center',flex:1}}><i align='center' className="fa fa-refresh fa-spin fa-3x"></i></div>:
+        {loading?<div className='spin' style={{display:'flex',justifyContent:'center',alignItems:'center',flex:1}}><CircularProgress /></div>:
         (url && user)?
     
     window.location.replace(`${url}${user}`)
@@ -83,8 +85,10 @@ const submitDetais=()=>{
       }
 
   </div>
-   
-    <div className='image fontfam' style={{marginTop:20}}>
+  <div className='image fontfam' style={{marginTop:20}}>
+      <p>{account}</p>
+    </div>
+    <div className='image fontfam' >
       <p>swopme.app/{username}</p>
     </div>
 

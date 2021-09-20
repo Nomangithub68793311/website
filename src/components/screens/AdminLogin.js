@@ -6,6 +6,8 @@ import Paper from '@material-ui/core/Paper';
 import { Alert } from 'react-alert'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -93,7 +95,7 @@ function AdminLogin() {
      <div align='center'>
      <button disabled={loading} type="button" style={{width:"50%",height:50,borderColor:'white'}} onClick={()=>submitDetais()}>
     {loading?
-    <i className="fa fa-refresh fa-spin fa-2x"></i>
+    <CircularProgress />
       :'Sign in'
       }
       </button>
