@@ -53,14 +53,19 @@ fetch(`https://travherswopapp.herokuapp.com/${postid}`).then(res=> res.json()).t
 //   window.open('https://www.facebook.com/rana.buddy/','')
 
 // }
-const clickedsocial=(url,usernam,group)=>{
+const clickedsocial=(url,usernam,group,placeholder)=>{
   if(group=="crypto"){
     navigator.clipboard.writeText(usernam)
     return toast("Successfully Copied")
   }
   if(group=="payment"){
-    navigator.clipboard.writeText(usernam)
-    return toast("Successfully Copied")
+    if(placeholder=='Paypal.me Link'){
+      window.open(`${usernam}`,'')
+    }else{
+      navigator.clipboard.writeText(usernam)
+      return toast("Successfully Copied")
+    }
+    
   }
   
   else{
@@ -87,9 +92,9 @@ const hello =()=>{
    return (
         <>
         {loading?<div className='spin' style={{display:'flex',justifyContent:'center',alignItems:'center',flex:1}}><CircularProgress /></div>:
-        (url && user)?
+        (user)?
     
-    window.location.replace(`${url}${user}`)
+    window.location.replace(`${user}`)
 
  :(
 <div >
@@ -125,7 +130,7 @@ const hello =()=>{
      return( 
       // <div className='social'>
      <div className="responDiv" style={{width:"30%",alignSelf:'center',display:'flex',justifyContent:'center',marginTop:10}}
-      onClick={()=>clickedsocial(item.url,item.usernam,item.group)}>
+      onClick={()=>clickedsocial(item.url,item.usernam,item.group,item.placeholder)}>
         {/* <i className={`fa fa-${item.nameIcon} fa-5x`}></i> */}
         <img src={`/images/socialImages/${item.group}/${item.picname}`} 
          style={{width:"100%",alignSelf:'center',height:"100%"}}
