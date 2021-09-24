@@ -59,11 +59,11 @@ const clickedsocial=(url,usernam,group,placeholder)=>{
     return toast("Successfully Copied")
   }
   if(placeholder=="WhatsApp Number"||placeholder=="FaceTime"){
-    window.open(`${url}${usernam}`,'')
+    return window.open(`${url}${usernam}`,'')
   }
   if(group=="payment"){
     if(placeholder=='Paypal.me Link'){
-      window.open(`${usernam}`,'')
+      return  window.open(`${usernam}`,'')
     }else{
       navigator.clipboard.writeText(usernam)
       return toast("Successfully Copied")
@@ -74,7 +74,7 @@ const clickedsocial=(url,usernam,group,placeholder)=>{
   else{
     // navigator.clipboard.writeText(window.location.toString())
 
-    window.open(`${usernam}`,'')
+    return window.open(`${usernam}`,'')
 
   }
 
