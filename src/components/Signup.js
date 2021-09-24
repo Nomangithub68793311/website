@@ -76,14 +76,7 @@ const hello =()=>{
     return toast("Successfully copied")
 
 }
-const copyToClipboard = () => {
-  const textField = document.createElement('textarea');
-  textField.innerText = url;
-  document.body.appendChild(textField);
-  textField.select();
-  document.execCommand('copy');
-  textField.remove();
-};
+
 
    return (
         <>
@@ -154,14 +147,14 @@ const copyToClipboard = () => {
      </div>
 
  
-<div align='center' style={{marginTop:20,marginBottom:30}}>
+{/* <div align='center' style={{marginTop:20,marginBottom:30}}>
                 
                 <button 
   onClick={() =>  copyToClipboard()}
 >
   Copy
 </button>   
-  </div>
+  </div> */}
   <ToastContainer />
 </div>
 </div>)
