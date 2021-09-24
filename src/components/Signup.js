@@ -56,11 +56,17 @@ fetch(`https://travherswopapp.herokuapp.com/${postid}`).then(res=> res.json()).t
 const clickedsocial=(url,usernam,group)=>{
   if(group=="crypto"){
     navigator.clipboard.writeText(usernam)
-    return toast("Successfully copied")
-  }else{
+    return toast("Successfully Copied")
+  }
+  if(group=="payment"){
+    navigator.clipboard.writeText(usernam)
+    return toast("Successfully Copied")
+  }
+  
+  else{
     // navigator.clipboard.writeText(window.location.toString())
 
-    window.open(`${url}${usernam}`,'')
+    window.open(`${usernam}`,'')
 
   }
 
