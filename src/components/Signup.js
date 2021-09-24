@@ -58,6 +58,9 @@ const clickedsocial=(url,usernam,group,placeholder)=>{
     navigator.clipboard.writeText(usernam)
     return toast("Successfully Copied")
   }
+  if(placeholder=="'WhatsApp Number'"){
+    window.open(`${url}${usernam}`,'')
+  }
   if(group=="payment"){
     if(placeholder=='Paypal.me Link'){
       window.open(`${usernam}`,'')
