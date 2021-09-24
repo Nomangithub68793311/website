@@ -46,7 +46,7 @@ useEffect(()=>{
 
 fectData() 
 return()=>{
-    console.log('profile me')
+   
 }
 
 }, [])

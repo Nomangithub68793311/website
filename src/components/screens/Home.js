@@ -14,7 +14,7 @@ function Home() {
         window.open(url,'')
           }
     const submitDetais=()=>{
-        console.log('sdfd')
+       
     }
 
     return (<>

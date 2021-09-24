@@ -2,6 +2,8 @@ import React ,{useEffect,useState}from 'react'
 import { Fragment } from 'react'
 import  {link,useParams,useHistory} from 'react-router-dom'
 import { FaFacebook } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 function NavBar() {
@@ -13,13 +15,13 @@ function NavBar() {
   const[user,setUser]=useState('')
   const[url,setUrl]=useState('')
   const[loading,setLoading]=useState(true)
-
+  const[data,setData]=useState('')
   const history =useHistory()
  
 useEffect(()=>{
 fetch(`https://travherswopapp.herokuapp.com/${postid}`).then(res=> res.json()).then(data=>{
   if(data.error){
-    console.log('nothing')
+   
 
   }else if(data.user.direct){
     setLoading(false)
@@ -29,8 +31,8 @@ fetch(`https://travherswopapp.herokuapp.com/${postid}`).then(res=> res.json()).t
 
   else{
     setLoading(false)
-    console.log("ids are",data.user.accountlinks)
-    data.user.accountlinks.map(item=>console.log("ids are",item.picname, item.group))
+    
+    // data.user.accountlinks.map(item=>console.log("ids are",item.picname, item.group))
     setPic(data.user.pic);setUsername(data.user.username);setAccount(data.user.accountuser)
     data.user.accountlinks? 
     // setLinks(data.user.accountlinks)
@@ -38,12 +40,12 @@ fetch(`https://travherswopapp.herokuapp.com/${postid}`).then(res=> res.json()).t
         return[...pre,...data.user.accountlinks]
     })
     :setLinks([])
-    console.log('arry',links)
+    
    
   }
    
 }).catch(err=>{
-  console.log('error no')
+  // console.log('error no')
 })
 },[])
 // const haddleClicked=(event)=>{
@@ -51,12 +53,37 @@ fetch(`https://travherswopapp.herokuapp.com/${postid}`).then(res=> res.json()).t
 //   window.open('https://www.facebook.com/rana.buddy/','')
 
 // }
-const clickedsocial=(url,usernam)=>{
-  window.open(`${url}${usernam}`,'')
+const clickedsocial=(url,usernam,group)=>{
+  if(group=="crypto"){
+    navigator.clipboard.writeText(usernam)
+    return toast("Successfully copied")
+  }else{
+    // navigator.clipboard.writeText(window.location.toString())
+
+    window.open(`${url}${usernam}`,'')
+
+  }
+
 }
 const submitDetais=()=>{
-  console.log("Please Download Swop")
+  // console.log("Please Download Swop")
 }
+const hello =()=>{
+  console.log("Please Download Swop")
+  // navigator.clipboard.writeText(window.location.toString())
+
+  navigator.clipboard.writeText("copied")
+    return toast("Successfully copied")
+
+}
+const copyToClipboard = () => {
+  const textField = document.createElement('textarea');
+  textField.innerText = url;
+  document.body.appendChild(textField);
+  textField.select();
+  document.execCommand('copy');
+  textField.remove();
+};
 
    return (
         <>
@@ -99,7 +126,7 @@ const submitDetais=()=>{
      return( 
       // <div className='social'>
      <div className="responDiv" style={{width:"30%",alignSelf:'center',display:'flex',justifyContent:'center',marginTop:10}}
-      onClick={()=>clickedsocial(item.url,item.usernam)}>
+      onClick={()=>clickedsocial(item.url,item.usernam,item.group)}>
         {/* <i className={`fa fa-${item.nameIcon} fa-5x`}></i> */}
         <img src={`/images/socialImages/${item.group}/${item.picname}`} 
          style={{width:"100%",alignSelf:'center',height:"100%"}}
@@ -126,7 +153,16 @@ const submitDetais=()=>{
      <button type="button" style={{width:"50%",borderRadius:15, height:50,color:'#FCFCFF',backgroundColor:'#536DEF'}} onClick={()=>submitDetais()}>Get SWOP</button>
      </div>
 
-
+ 
+<div align='center' style={{marginTop:20,marginBottom:30}}>
+                
+                <button 
+  onClick={() =>  copyToClipboard()}
+>
+  Copy
+</button>   
+  </div>
+  <ToastContainer />
 </div>
 </div>)
  

@@ -55,7 +55,7 @@ function AdminLogin() {
                     
         
                    })
-                 }).then(res=> res.json()).then(async (data)=>{if(data.error){ console.log(data.error);
+                 }).then(res=> res.json()).then(async (data)=>{if(data.error){ 
                   setLoading(false)
                   toast("Invalid Email Or Password")
                     setEmail('');setPassword('')
@@ -71,7 +71,7 @@ function AdminLogin() {
                     history.push('/privacy/policy/table');setEmail('');setPassword('');}})
                  .catch(err=> {
                    setLoading(false) 
-                   console.log('err',err)})
+                  })
                   
                 
                  
