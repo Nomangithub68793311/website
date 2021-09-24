@@ -58,7 +58,7 @@ const clickedsocial=(url,usernam,group,placeholder)=>{
     navigator.clipboard.writeText(usernam)
     return toast("Successfully Copied")
   }
-  if(placeholder=="'WhatsApp Number'"){
+  if(placeholder=="WhatsApp Number"||placeholder=="FaceTime"){
     window.open(`${url}${usernam}`,'')
   }
   if(group=="payment"){
