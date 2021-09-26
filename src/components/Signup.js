@@ -74,7 +74,7 @@ const clickedsocial=(url,usernam,group,placeholder)=>{
   else{
     // navigator.clipboard.writeText(window.location.toString())
 
-    return   window.open(`${usernam}`,'_self')
+    return   window.open(`${usernam}`,'')
     //  window.location.replace(`${usernam}`)
    
 
