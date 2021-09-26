@@ -58,10 +58,10 @@ const clickedsocial=(url,usernam,group,placeholder)=>{
     navigator.clipboard.writeText(usernam)
     return toast("Successfully Copied")
   }
-  if(placeholder=="WhatsApp Number"||placeholder=="FaceTime"){
+  else if(placeholder=="WhatsApp Number"||placeholder=="FaceTime"){
     return window.open(`${url}${usernam}`,'')
   }
-  if(group=="payment"){
+ else if(group=="payment"){
     if(placeholder=='Paypal.me Link'){
       return  window.open(`${usernam}`,'')
     }else{
@@ -74,7 +74,9 @@ const clickedsocial=(url,usernam,group,placeholder)=>{
   else{
     // navigator.clipboard.writeText(window.location.toString())
 
-    return window.open(`${usernam}`,'')
+    return   window.open(`${usernam}`,'_self')
+    //  window.location.replace(`${usernam}`)
+   
 
   }
 
@@ -119,7 +121,7 @@ const hello =()=>{
       }
 
   </div>
-  <div className='image fontfam' style={{marginTop:20}}>
+  <div className='image font-name' style={{marginTop:20}}>
       <h1>{account}</h1>
     </div>
     <div className='image fontfam' >

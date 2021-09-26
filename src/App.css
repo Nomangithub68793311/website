@@ -74,6 +74,7 @@
     transform: rotate(360deg);
   }
 } */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
@@ -155,10 +156,9 @@ li a{
 }
 .fontfam{
   font-family: 'Poppins', sans-serif;}
-/* .img-fluid{
-
-  border-radius: 600px;
-} */
+.font-name{
+  font-family: 'Poppins', sans-serif;
+}
 .imgbar{
   width: 150px;
 
