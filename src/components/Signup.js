@@ -61,6 +61,9 @@ const clickedsocial=(url,usernam,group,placeholder)=>{
   else if(placeholder=="WhatsApp Number"||placeholder=="FaceTime"){
     return window.open(`${url}${usernam}`,'')
   }
+  else if(placeholder=="Phone Number"){
+    return window.open(`${url}${usernam}`,'')
+  }
  else if(group=="payment"){
     if(placeholder=='Paypal.me Link'){
       return  window.open(`${usernam}`,'')
