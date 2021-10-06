@@ -59,14 +59,20 @@ const clickedsocial=(url,usernam,group,placeholder)=>{
     return toast("Successfully Copied")
   }
   else if(placeholder=="WhatsApp Number"||placeholder=="FaceTime"){
-    return window.open(`${url}${usernam}`,'')
+    return window.open(`${url}${usernam}`,'_self')
   }
   else if(placeholder=="Phone Number"){
-    return window.open(`${url}${usernam}`,'')
+    return window.open(`${url}${usernam}`,'_self')
+  }
+  else if(placeholder=="Email Address"){
+    return window.open(`${url}${usernam}`,'_self')
+  }
+  else if(placeholder=="Number Number"){
+    return window.open(`${url}${usernam}`,'_self')
   }
  else if(group=="payment"){
     if(placeholder=='Paypal.me Link'){
-      return  window.open(`${usernam}`,'')
+      return  window.open(`${usernam}`,'_self')
     }else{
       navigator.clipboard.writeText(usernam)
       return toast("Successfully Copied")
