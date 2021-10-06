@@ -67,7 +67,7 @@ const clickedsocial=(url,usernam,group,placeholder)=>{
   else if(placeholder=="Email Address"){
     return window.open(`${url}${usernam}`,'_self')
   }
-  else if(url=='https://snapchat.com/'||url=='https://www.tiktok.com/'){
+  else if(url=='https://snapchat.com/'||url=='https://tiktok.com/'){
     const url1=url.split( 'https://' )[1]
     const url2=url1.split( '.com/' )[0]
     const url3=	 url.split( '/' )[3]
