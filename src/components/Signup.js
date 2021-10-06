@@ -11,6 +11,8 @@ function NavBar() {
   const [username,setUsername]=useState('')
   const [account,setAccount]=useState('')
   const [links,setLinks]=useState([])
+  const[placeholder,setPlaceholder]=useState('')
+  const[group,setGroup]=useState('')
   const {postid}=useParams()
   const[user,setUser]=useState('')
   const[url,setUrl]=useState('')
@@ -27,6 +29,8 @@ fetch(`https://travherswopapp.herokuapp.com/${postid}`).then(res=> res.json()).t
     setLoading(false)
     setUser(data.user.direct.usernam);
     setUrl(data.user.direct.url)
+    setPlaceholder(data.user.direct.placeholder)
+    setGroup(data.user.direct.group)
   }
 
   else{
@@ -102,7 +106,55 @@ const clickedsocial=(url,usernam,group,placeholder)=>{
 
 }
 const submitDetais=()=>{
-  // console.log("Please Download Swop")
+  window.open('https://swopme.co/','')
+}
+const openLink=(user,url,group,placeholder)=>{
+  if(group=="crypto"){
+    navigator.clipboard.writeText(user)
+    return toast("Successfully Copied")
+  }
+  else if(placeholder=="WhatsApp Number"||placeholder=="FaceTime"){
+    return window.open(`${url}${user}`,'_self')
+  }
+  else if(placeholder=="Phone Number"){
+    return window.open(`${url}${user}`,'_self')
+  }
+  else if(placeholder=="Email Address"){
+    return window.open(`${url}${user}`,'_self')
+  }
+  else if(url=='https://snapchat.com/'||url=='https://tiktok.com/'){
+    const url1=url.split( 'https://' )[1]
+    const url2=url1.split( '.com/' )[0]
+    const url3=	 url.split( '/' )[3]
+    const url4=`${url2}://user?username=${url3}`
+    
+    return window.open(`${url4}`,'_self')
+  
+   
+    
+  }
+  else if(placeholder=="Number Number"){
+    return window.open(`${url}${user}`,'_self')
+  }
+ else if(group=="payment"){
+    if(placeholder=='Paypal.me Link'){
+      return  window.open(`${user}`,'_self')
+    }else{
+      navigator.clipboard.writeText(user)
+      return toast("Successfully Copied")
+    }
+    
+  }
+  
+  else{
+    // navigator.clipboard.writeText(window.location.toString())
+
+    return   window.open(`${user}`,'_self')
+    //  window.location.replace(`${usernam}`)
+   
+
+  }
+
 }
 const hello =()=>{
   console.log("Please Download Swop")
@@ -118,9 +170,9 @@ const hello =()=>{
         <>
         {loading?<div className='spin' style={{display:'flex',justifyContent:'center',alignItems:'center',flex:1}}><CircularProgress /></div>:
         (user)?
-    
-    window.location.replace(`${user}`)
-
+  
+    openLink(user,url,group,placeholder)
+   
  :(
 <div >
    <nav style={{position:'fixed',zIndex: '1'}}>

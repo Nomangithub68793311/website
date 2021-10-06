@@ -14,7 +14,8 @@ function Home() {
         window.open(url,'')
           }
     const submitDetais=()=>{
-       
+        window.open('https://swopme.co/','')
+
     }
 
     return (<>
@@ -43,20 +44,20 @@ function Home() {
     
       
      <div className="responDiv" style={{width:"30%",alignSelf:'center',display:'flex',justifyContent:'center',marginTop:10}}
-      onClick={()=>clickedsocial('https://facebook.com')}>
+      onClick={()=>clickedsocial('https://www.facebook.com/swopmeapp/')}>
         
         <img src='/images/socialImages/social/Facebook.png'
          style={{width:"100%",alignSelf:'center',height:"100%"}}
          alt={'haha'+ Math.floor(Math.random()*100)}/>
       </div>
       <div className="responDiv" style={{width:"30%",alignSelf:'center',display:'flex',justifyContent:'center',marginTop:10}}
-      onClick={()=>clickedsocial('https://swopme.app')}>
+      onClick={()=>clickedsocial('https://www.instagram.com/swopme.app/')}>
       <img src='/images/socialImages/social/Instagram.png'
          style={{width:"100%",alignSelf:'center',height:"100%"}}
          alt={'haha'+ Math.floor(Math.random()*100)}/>
   </div>
 <div className="responDiv" style={{width:"30%",alignSelf:'center',display:'flex',justifyContent:'center',marginTop:10}}
-      onClick={()=>clickedsocial('https://swopme.app')}>
+      onClick={()=>clickedsocial('https://twitter.com/swopmeapp')}>
          <img src='/images/socialImages/social/Twitter.png'
          style={{width:"100%",alignSelf:'center',height:"100%"}}
          alt={'haha'+ Math.floor(Math.random()*100)}/>
@@ -79,13 +80,13 @@ function Home() {
          alt={'haha'+ Math.floor(Math.random()*100)}/>
 </div>
 <div className="responDiv" style={{width:"30%",alignSelf:'center',display:'flex',justifyContent:'center',marginTop:10}}
-      onClick={()=>clickedsocial('https://TikTok.com/')}>
+      onClick={()=>clickedsocial('https://www.tiktok.com/@swopme?')}>
           <img src='/images/socialImages/social/TikTok.png'
          style={{width:"100%",alignSelf:'center',height:"100%"}}
          alt={'haha'+ Math.floor(Math.random()*100)}/>
 </div>
 <div className="responDiv" style={{width:"30%",alignSelf:'center',display:'flex',justifyContent:'center',marginTop:10}}
-      onClick={()=>clickedsocial('https://Snapchat.com/')}>
+      onClick={()=>clickedsocial('https://www.snapchat.com/add/swop_app')}>
          <img src='/images/socialImages/social/Snapchat.png'
          style={{width:"100%",alignSelf:'center',height:"100%"}}
          alt={'haha'+ Math.floor(Math.random()*100)}/>
