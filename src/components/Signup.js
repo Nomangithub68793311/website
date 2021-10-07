@@ -71,6 +71,10 @@ const clickedsocial=(url,usernam,group,placeholder)=>{
   else if(placeholder=="Email Address"){
     return window.open(`${url}${usernam}`,'_self')
   }
+  else if(placeholder=="Address"){
+    const urllink =`https://maps.google.com/maps?q=${usernam}`
+    return window.open(`${urllink}`,'_self')
+  }
   else if(url=='https://snapchat.com/'||url=='https://tiktok.com/'){
     const url1=url.split( 'https://' )[1]
     const url2=url1.split( '.com/' )[0]
@@ -116,8 +120,13 @@ const openLink=(user,url,group,placeholder)=>{
   else if(placeholder=="WhatsApp Number"||placeholder=="FaceTime"){
     return window.open(`${url}${user}`,'_self')
   }
+ 
   else if(placeholder=="Phone Number"){
     return window.open(`${url}${user}`,'_self')
+  }
+  else if(placeholder=="Address"){
+    const urllink =`https://maps.google.com/maps?q=${user}`
+    return window.open(`${urllink}`,'_self')
   }
   else if(placeholder=="Email Address"){
     return window.open(`${url}${user}`,'_self')
