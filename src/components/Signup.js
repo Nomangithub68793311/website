@@ -131,7 +131,7 @@ const openLink=(user,url,group,placeholder)=>{
   else if(placeholder=="Email Address"){
     return window.open(`${url}${user}`,'')
   }
-  else if(url=='https://snapchat.com/'||url=='https://tiktok.com/'){
+  else if(url=='https://snapchat.com/'||url=='https://tiktok.com/'||url=='https://facebook.com/'){
     const url1=url.split( 'https://' )[1]
     const url2=url1.split( '.com/' )[0]
     const url3=	 user.split( '/' )[3]
