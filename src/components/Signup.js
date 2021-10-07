@@ -90,7 +90,7 @@ const clickedsocial=(url,usernam,group,placeholder)=>{
     const url1=url.split( 'https://' )[1]
     const url2=url1.split( '.com/' )[0]
     const url3=	 usernam.split( '/' )[3]
-    const url4=`fb://user?screen_name=${url3}`
+    const url4=`fb://user?username=${url3}`
     
     return window.open(`${url4}`,'_self')
   
@@ -157,7 +157,7 @@ const openLink=(user,url,group,placeholder)=>{
     const url1=url.split( 'https://' )[1]
     const url2=url1.split( '.com/' )[0]
     const url3=	 user.split( '/' )[3]
-    const url4=`fb://user?screen_name=${url3}`
+    const url4=`fb://user?username=${url3}`
     
     return window.open(`${url4}`,'_self')
   
