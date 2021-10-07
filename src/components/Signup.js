@@ -75,16 +75,20 @@ const clickedsocial=(url,usernam,group,placeholder)=>{
     const urllink =`https://maps.google.com/maps?q=${usernam}`
     return window.open(`${urllink}`,'_self')
   }
-  else if(url=='https://snapchat.com/'||url=='https://tiktok.com/' ){
+  else if(url=='https://snapchat.com/' ){
     const url1=url.split( 'https://' )[1]
     const url2=url1.split( '.com/' )[0]
     const url3=	 usernam.split( '/' )[3]
     const url4=`${url2}://user?username=${url3}`
     
     return window.open(`${url4}`,'_self')
-  
-   
-    
+  }
+  else if(url=='https://tiktok.com/' ){
+    const url1=url.split( 'https://' )[1]
+    const url2=url1.split( '.com/' )[0]
+    const url3=	 usernam.split( '/' )[3]
+    const urll1=`https://www.tiktok.com/@${url3}?`
+    return window.open(`${urll1}`,'_self')
   }
   else if(url=='https://facebook.com/'){
     const url1=url.split( 'https://' )[1]
@@ -142,16 +146,21 @@ const openLink=(user,url,group,placeholder)=>{
   else if(placeholder=="Email Address"){
     return window.open(`${url}${user}`,'')
   }
-  else if(url=='https://snapchat.com/'||url=='https://tiktok.com/'){
+  else if(url=='https://snapchat.com/'){
     const url1=url.split( 'https://' )[1]
     const url2=url1.split( '.com/' )[0]
     const url3=	 user.split( '/' )[3]
     const url4=`${url2}://user?username=${url3}`
     
     return window.open(`${url4}`,'')
-  
-   
-    
+  }
+
+  else if(url=='https://tiktok.com/' ){
+    const url1=url.split( 'https://' )[1]
+    const url2=url1.split( '.com/' )[0]
+    const url3=user.split( '/' )[3]
+    const urll1=`https://www.tiktok.com/@${url3}?`
+    return window.open(`${urll1}`,'_self')
   }
   else if(url=='https://facebook.com/'){
     const url1=url.split( 'https://' )[1]
@@ -178,7 +187,6 @@ const openLink=(user,url,group,placeholder)=>{
   }
   
   else{
-    // navigator.clipboard.writeText(window.location.toString())
 
     return   window.open(`${user}`,'')
     //  window.location.replace(`${usernam}`)
@@ -189,7 +197,6 @@ const openLink=(user,url,group,placeholder)=>{
 }
 const hello =()=>{
   console.log("Please Download Swop")
-  // navigator.clipboard.writeText(window.location.toString())
 
   navigator.clipboard.writeText("copied")
     return toast("Successfully copied")
