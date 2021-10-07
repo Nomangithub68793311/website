@@ -52,11 +52,7 @@ fetch(`https://travherswopapp.herokuapp.com/${postid}`).then(res=> res.json()).t
   // console.log('error no')
 })
 },[])
-// const haddleClicked=(event)=>{
-//   event.preventDefault();
-//   window.open('https://www.facebook.com/rana.buddy/','')
 
-// }
 const clickedsocial=(url,usernam,group,placeholder)=>{
   if(group=="crypto"){
     navigator.clipboard.writeText(usernam)
