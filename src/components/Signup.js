@@ -75,11 +75,22 @@ const clickedsocial=(url,usernam,group,placeholder)=>{
     const urllink =`https://maps.google.com/maps?q=${usernam}`
     return window.open(`${urllink}`,'_self')
   }
-  else if(url=='https://snapchat.com/'||url=='https://tiktok.com/' ||url=='https://facebook.com/'){
+  else if(url=='https://snapchat.com/'||url=='https://tiktok.com/' ){
     const url1=url.split( 'https://' )[1]
     const url2=url1.split( '.com/' )[0]
     const url3=	 usernam.split( '/' )[3]
     const url4=`${url2}://user?username=${url3}`
+    
+    return window.open(`${url4}`,'_self')
+  
+   
+    
+  }
+  else if(url=='https://facebook.com/'){
+    const url1=url.split( 'https://' )[1]
+    const url2=url1.split( '.com/' )[0]
+    const url3=	 usernam.split( '/' )[3]
+    const url4=`fb://user?screen_name=${url3}`
     
     return window.open(`${url4}`,'_self')
   
