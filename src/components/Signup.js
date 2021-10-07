@@ -78,7 +78,7 @@ const clickedsocial=(url,usernam,group,placeholder)=>{
   else if(url=='https://snapchat.com/'||url=='https://tiktok.com/'){
     const url1=url.split( 'https://' )[1]
     const url2=url1.split( '.com/' )[0]
-    const url3=	 url.split( '/' )[3]
+    const url3=	 usernam.split( '/' )[3]
     const url4=`${url2}://user?username=${url3}`
     
     return window.open(`${url4}`,'_self')
