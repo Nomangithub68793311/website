@@ -75,7 +75,7 @@ const clickedsocial=(url,usernam,group,placeholder)=>{
     const urllink =`https://maps.google.com/maps?q=${usernam}`
     return window.open(`${urllink}`,'_self')
   }
-  else if(url=='https://snapchat.com/'||url=='https://tiktok.com/'){
+  else if(url=='https://snapchat.com/'||url=='https://tiktok.com/' ||url=='https://facebook.com/'){
     const url1=url.split( 'https://' )[1]
     const url2=url1.split( '.com/' )[0]
     const url3=	 usernam.split( '/' )[3]
