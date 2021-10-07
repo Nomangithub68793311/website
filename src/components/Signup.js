@@ -118,18 +118,18 @@ const openLink=(user,url,group,placeholder)=>{
     return toast("Successfully Copied")
   }
   else if(placeholder=="WhatsApp Number"||placeholder=="FaceTime"){
-    return window.open(`${url}${user}`,'_self')
+    return window.open(`${url}${user}`,'')
   }
  
   else if(placeholder=="Phone Number"){
-    return window.open(`${url}${user}`,'_self')
+    return window.open(`${url}${user}`,'')
   }
   else if(placeholder=="Address"){
     const urllink =`https://maps.google.com/maps?q=${user}`
-    return window.open(`${urllink}`,'_self')
+    return window.open(`${urllink}`,'')
   }
   else if(placeholder=="Email Address"){
-    return window.open(`${url}${user}`,'_self')
+    return window.open(`${url}${user}`,'')
   }
   else if(url=='https://snapchat.com/'||url=='https://tiktok.com/'){
     const url1=url.split( 'https://' )[1]
@@ -137,17 +137,17 @@ const openLink=(user,url,group,placeholder)=>{
     const url3=	 url.split( '/' )[3]
     const url4=`${url2}://user?username=${url3}`
     
-    return window.open(`${url4}`,'_self')
+    return window.open(`${url4}`,'')
   
    
     
   }
   else if(placeholder=="Number Number"){
-    return window.open(`${url}${user}`,'_self')
+    return window.open(`${url}${user}`,'')
   }
  else if(group=="payment"){
     if(placeholder=='Paypal.me Link'){
-      return  window.open(`${user}`,'_self')
+      return  window.open(`${user}`,'')
     }else{
       navigator.clipboard.writeText(user)
       return toast("Successfully Copied")
@@ -158,7 +158,7 @@ const openLink=(user,url,group,placeholder)=>{
   else{
     // navigator.clipboard.writeText(window.location.toString())
 
-    return   window.open(`${user}`,'_self')
+    return   window.open(`${user}`,'')
     //  window.location.replace(`${usernam}`)
    
 
