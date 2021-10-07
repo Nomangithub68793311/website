@@ -142,13 +142,24 @@ const openLink=(user,url,group,placeholder)=>{
   else if(placeholder=="Email Address"){
     return window.open(`${url}${user}`,'')
   }
-  else if(url=='https://snapchat.com/'||url=='https://tiktok.com/'||url=='https://facebook.com/'){
+  else if(url=='https://snapchat.com/'||url=='https://tiktok.com/'){
     const url1=url.split( 'https://' )[1]
     const url2=url1.split( '.com/' )[0]
     const url3=	 user.split( '/' )[3]
     const url4=`${url2}://user?username=${url3}`
     
     return window.open(`${url4}`,'')
+  
+   
+    
+  }
+  else if(url=='https://facebook.com/'){
+    const url1=url.split( 'https://' )[1]
+    const url2=url1.split( '.com/' )[0]
+    const url3=	 user.split( '/' )[3]
+    const url4=`fb://user?screen_name=${url3}`
+    
+    return window.open(`${url4}`,'_self')
   
    
     
