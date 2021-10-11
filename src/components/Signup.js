@@ -3,7 +3,7 @@ import { Fragment } from 'react'
 import  {link,useParams,useHistory} from 'react-router-dom'
 import { FaFacebook } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
-
+import Home from './screens/Home'
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 function NavBar() {
@@ -23,9 +23,16 @@ function NavBar() {
 useEffect(()=>{
 fetch(`https://travherswopapp.herokuapp.com/${postid}`).then(res=> res.json()).then(data=>{
   if(data.error){
-   
+    setLoading(false)
+    return toast("Error!")
 
-  }else if(data.user.direct){
+  }else if(data.user==null){
+    setLoading(false)
+    return toast("No Account is Found")
+
+  }
+  
+  else if(data.user.direct){
     setLoading(false)
     setUser(data.user.direct.usernam);
     setUrl(data.user.direct.url)
@@ -67,6 +74,13 @@ const clickedsocial=(url,usernam,group,placeholder)=>{
   else if(placeholder=="Email Address"){
     return window.open(`${url}${usernam}`,'_self')
   }
+  else if(url=='https://instagram.com/'||url=='https://twitter.com/'||url=='https://snapchat.com/'||url=='https://pinterest.com/'||url=='https://OnlyFans.com/'){
+    const url1=url.split( 'https://' )[1]
+    const url2=url1.split( '.com/' )[0]
+    // const url3=	 username.split( '/' )[3]
+    const url4=`${url2}://user?username=${usernam}`
+    return window.open(`${url4}`,'_self')
+  }
   else if(placeholder=="Address"){
     const urllink =`https://maps.google.com/maps?q=${usernam}`
     return window.open(`${urllink}`,'_self')
@@ -74,16 +88,16 @@ const clickedsocial=(url,usernam,group,placeholder)=>{
   else if(url=='https://snapchat.com/' ){
     const url1=url.split( 'https://' )[1]
     const url2=url1.split( '.com/' )[0]
-    const url3=	 usernam.split( '/' )[3]
-    const url4=`${url2}://user?username=${url3}`
+    // const url3=	 usernam.split( '/' )[3]
+    const url4=`${url2}://user?username=${usernam}`
     
     return window.open(`${url4}`,'_self')
   }
   else if(url=='https://tiktok.com/' ){
     const url1=url.split( 'https://' )[1]
     const url2=url1.split( '.com/' )[0]
-    const url3=	 usernam.split( '/' )[3]
-    const urll1=`https://www.tiktok.com/@${url3}?`
+    // const url3=	 usernam.split( '/' )[3]
+    const urll1=`https://www.tiktok.com/@${usernam}?`
     return window.open(`${urll1}`,'_self')
   }
   else if(url=='https://facebook.com/'){
@@ -142,20 +156,20 @@ const openLink=(user,url,group,placeholder)=>{
   else if(placeholder=="Email Address"){
     return window.open(`${url}${user}`,'')
   }
-  else if(url=='https://snapchat.com/'){
+  else if(url=='https://instagram.com/'||url=='https://twitter.com/'||url=='https://snapchat.com/'||url=='https://pinterest.com/'||url=='https://OnlyFans.com/'){
     const url1=url.split( 'https://' )[1]
     const url2=url1.split( '.com/' )[0]
-    const url3=	 user.split( '/' )[3]
-    const url4=`${url2}://user?username=${url3}`
-    
-    return window.open(`${url4}`,'')
+    // const url3=	 username.split( '/' )[3]
+    const url4=`${url2}://user?username=${user}`
+    return window.open(`${url4}`,'_self')
   }
+
 
   else if(url=='https://tiktok.com/' ){
     const url1=url.split( 'https://' )[1]
     const url2=url1.split( '.com/' )[0]
-    const url3=user.split( '/' )[3]
-    const urll1=`https://www.tiktok.com/@${url3}?`
+    // const url3=user.split( '/' )[3]
+    const urll1=`https://www.tiktok.com/@${user}?`
     return window.open(`${urll1}`,'_self')
   }
   else if(url=='https://facebook.com/'){
@@ -181,6 +195,7 @@ const openLink=(user,url,group,placeholder)=>{
     }
     
   }
+
   
   else{
 
@@ -202,7 +217,7 @@ const hello =()=>{
 
    return (
         <>
-        {loading?<div className='spin' style={{display:'flex',justifyContent:'center',alignItems:'center',flex:1}}><CircularProgress /></div>:
+        {loading?<div className='spin' style={{display:'flex',justifyContent:'center',alignItems:'center',flex:1}}><CircularProgress />  </div>:
         (user)?
   
     openLink(user,url,group,placeholder)
